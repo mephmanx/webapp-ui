@@ -681,7 +681,9 @@
       });
 
       FB.AppEvents.logPageView();
-
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
     };
 
     (function(d, s, id){
@@ -692,11 +694,6 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
-<script>
-  FB.getLoginStatus(function(response) {
-  statusChangeCallback(response);
-  });
-</script>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
