@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft10{font-size:14px;font-family:Times;color:#000000;}
+	.ft11{font-size:25px;font-family:Times;color:#5b9bd4;}
+	.ft12{font-size:46px;font-family:Times;color:#5b9bd4;}
+	.ft13{font-size:25px;font-family:Times;color:#404040;}
+	.ft14{font-size:19px;font-family:Times;color:#585858;}
+	.ft15{font-size:11px;font-family:Times;color:#585858;}
+	.ft16{font-size:19px;font-family:Times;color:#5b9bd4;}
+	.ft17{font-size:13px;font-family:Times;color:#585858;}
+	.ft18{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page1-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target001.png" alt="background image"/>
+<p style="position:absolute;top:112px;left:108px;white-space:nowrap" class="ft18">&#160;<br/>&#160;</p>
+<p style="position:absolute;top:131px;left:324px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:731px;left:404px;white-space:nowrap" class="ft11">Application&#160;Architecture&#160;Concepts</p>
+<p style="position:absolute;top:716px;left:810px;white-space:nowrap" class="ft12">&#160;</p>
+<p style="position:absolute;top:762px;left:534px;white-space:nowrap" class="ft13">Enterprise Applications&#160;</p>
+<p style="position:absolute;top:1045px;left:602px;white-space:nowrap" class="ft14">Lyons,&#160;Christopher&#160;W.&#160;</p>
+<p style="position:absolute;top:1068px;left:624px;white-space:nowrap" class="ft15">Christopher.w.lyons@usps.gov&#160;</p>
+<p style="position:absolute;top:837px;left:733px;white-space:nowrap" class="ft16">Abstract&#160;</p>
+<p style="position:absolute;top:860px;left:270px;white-space:nowrap" class="ft17">Describe&#160;application&#160;architecture&#160;to&#160;take&#160;advantage&#160;of&#160;new&#160;technologies,&#160;DevOps&#160;</p>
+<p style="position:absolute;top:877px;left:363px;white-space:nowrap" class="ft17">processes,&#160;microservices,&#160;and&#160;true&#160;agile,&#160;customer&#160;focused&#160;design.&#160;&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft20{font-size:14px;font-family:Times;color:#000000;}
+	.ft21{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft22{font-size:22px;font-family:Times;color:#2d74b5;}
+	.ft23{font-size:8px;font-family:Times;color:#000000;}
+	.ft24{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft25{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page2-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target002.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft20">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft21">1&#160;</p>
+<p style="position:absolute;top:112px;left:108px;white-space:nowrap" class="ft24">&#160;<br/>&#160;</p>
+<p style="position:absolute;top:169px;left:108px;white-space:nowrap" class="ft22">Introduction&#160;</p>
+<p style="position:absolute;top:195px;left:108px;white-space:nowrap" class="ft25">&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:233px;left:162px;white-space:nowrap" class="ft20">This&#160;document&#160;is&#160;intended&#160;to&#160;describe&#160;an&#160;enterprise&#160;application&#160;architecture&#160;to&#160;take&#160;</p>
+<p style="position:absolute;top:252px;left:108px;white-space:nowrap" class="ft24">greater&#160;advantage&#160;of&#160;the&#160;technologies&#160;and&#160;infrastructure&#160;that&#160;USPS&#160;has&#160;installed&#160;over&#160;the&#160;past&#160;<br/>few&#160;years.&#160;&#160;Many&#160;of&#160;the&#160;benefits&#160;of&#160;this&#160;infrastructure&#160;and&#160;technology&#160;is&#160;achieved&#160;through&#160;use&#160;<br/>across&#160;the&#160;enterprise&#160;through&#160;cross-functional&#160;teams.&#160;&#160;Having&#160;been&#160;on&#160;multiple&#160;teams,&#160;both&#160;<br/>internal&#160;and&#160;external,&#160;I&#160;have&#160;seen&#160;how&#160;many&#160;of&#160;these&#160;technologies&#160;could&#160;benefit&#160;the&#160;<br/>organization&#160;overall&#160;and&#160;I&#160;prepared&#160;this&#160;document&#160;as&#160;a&#160;reference&#160;to&#160;how&#160;I&#160;have&#160;approached&#160;this&#160;<br/>infrastructure&#160;and&#160;as&#160;a&#160;document&#160;for&#160;use&#160;and&#160;adoption&#160;by&#160;others.&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:385px;left:162px;white-space:nowrap" class="ft20">I&#160;will&#160;try&#160;to&#160;describe&#160;my&#160;reasoning&#160;for&#160;this&#160;approach&#160;and&#160;what&#160;caused&#160;me&#160;to&#160;come&#160;to&#160;this&#160;</p>
+<p style="position:absolute;top:404px;left:108px;white-space:nowrap" class="ft24">current&#160;setup.&#160;&#160;I&#160;will&#160;also&#160;try&#160;to&#160;describe&#160;how&#160;I&#160;think&#160;this&#160;could&#160;be&#160;fit&#160;into&#160;how&#160;applications&#160;are&#160;<br/>developed&#160;and&#160;maintained&#160;within&#160;USPS&#160;but&#160;this&#160;will&#160;be&#160;limited&#160;by&#160;what&#160;I&#160;have&#160;seen&#160;and&#160;worked&#160;<br/>with&#160;and&#160;most&#160;likely&#160;does&#160;not&#160;cover&#160;all&#160;scenarios.&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:480px;left:162px;white-space:nowrap" class="ft20">The&#160;concepts&#160;and&#160;designs&#160;presented&#160;in&#160;this&#160;document&#160;were&#160;reached&#160;in&#160;response&#160;to&#160;</p>
+<p style="position:absolute;top:499px;left:108px;white-space:nowrap" class="ft20">actual&#160;USPS&#160;application&#160;design&#160;and&#160;development&#160;issues,&#160;not&#160;theory&#160;or&#160;3</p>
+<p style="position:absolute;top:503px;left:637px;white-space:nowrap" class="ft23">rd</p>
+<p style="position:absolute;top:499px;left:646px;white-space:nowrap" class="ft20">&#160;party&#160;products.&#160;&#160;They&#160;</p>
+<p style="position:absolute;top:518px;left:108px;white-space:nowrap" class="ft24">were&#160;created&#160;to&#160;meet&#160;real&#160;business&#160;and&#160;developer&#160;needs&#160;with&#160;tangible&#160;benefits&#160;and&#160;promising&#160;<br/>future&#160;results.&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:575px;left:324px;white-space:nowrap" class="ft20">&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft30{font-size:14px;font-family:Times;color:#000000;}
+	.ft31{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft32{font-size:22px;font-family:Times;color:#2d74b5;}
+	.ft33{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft34{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page3-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target003.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft30">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft31">2&#160;</p>
+<p style="position:absolute;top:113px;left:108px;white-space:nowrap" class="ft32">Contents&#160;</p>
+<p style="position:absolute;top:139px;left:108px;white-space:nowrap" class="ft34">&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:216px;left:108px;white-space:nowrap" class="ft32">&#160;</p>
+<p style="position:absolute;top:244px;left:108px;white-space:nowrap" class="ft30"><a href="#page2-div">Introduction&#160;.....................................................................................................................................&#160;1&#160;</a></p>
+<p style="position:absolute;top:271px;left:108px;white-space:nowrap" class="ft30"><a href="#page3-div">Contents&#160;..........................................................................................................................................&#160;2&#160;</a></p>
+<p style="position:absolute;top:297px;left:108px;white-space:nowrap" class="ft30"><a href="#page4-div">Overview&#160;.........................................................................................................................................&#160;3&#160;</a></p>
+<p style="position:absolute;top:324px;left:108px;white-space:nowrap" class="ft30"><a href="#page8-div">Technical&#160;Details&#160;</a></p>
+<p style="position:absolute;top:321px;left:239px;white-space:nowrap" class="ft30"><a href="#page8-div">–&#160;UI/UX&#160;...............................................................................................................&#160;7&#160;</a></p>
+<p style="position:absolute;top:350px;left:125px;white-space:nowrap" class="ft30"><a href="#page8-div">Infrastructure&#160;...............................................................................................................................&#160;7&#160;</a></p>
+<p style="position:absolute;top:377px;left:108px;white-space:nowrap" class="ft30"><a href="#page11-div">Technical&#160;Details&#160;</a></p>
+<p style="position:absolute;top:374px;left:239px;white-space:nowrap" class="ft30"><a href="#page11-div">–&#160;Server-Side&#160;Application&#160;................................................................................&#160;10&#160;</a></p>
+<p style="position:absolute;top:403px;left:108px;white-space:nowrap" class="ft30"><a href="#page12-div">Microservice&#160;Rules&#160;and&#160;Recommendations&#160;.................................................................................&#160;11&#160;</a></p>
+<p style="position:absolute;top:430px;left:108px;white-space:nowrap" class="ft33">&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:468px;left:324px;white-space:nowrap" class="ft30">&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft40{font-size:14px;font-family:Times;color:#000000;}
+	.ft41{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft42{font-size:22px;font-family:Times;color:#2d74b5;}
+	.ft43{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft44{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft45{font-size:14px;line-height:20px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page4-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target004.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft40">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft41">3&#160;</p>
+<p style="position:absolute;top:113px;left:108px;white-space:nowrap" class="ft42">Overview&#160;</p>
+<p style="position:absolute;top:139px;left:108px;white-space:nowrap" class="ft43">&#160;<br/>&#160;<br/>From&#160;a&#160;high&#160;level&#160;perspective&#160;there&#160;are&#160;3&#160;high&#160;level&#160;components&#160;to&#160;describe.&#160;<br/>&#160;</p>
+<p style="position:absolute;top:212px;left:135px;white-space:nowrap" class="ft40">•&#160;&#160;UI/UX&#160;design,&#160;infrastructure,&#160;architecture,&#160;deployment,&#160;process&#160;</p>
+<p style="position:absolute;top:232px;left:135px;white-space:nowrap" class="ft45">•&#160;&#160;Application&#160;services&#160;/&#160;microservices&#160;design,&#160;deployment,&#160;process,&#160;and&#160;architecture&#160;<br/>•&#160;&#160;DevOps&#160;integration&#160;including&#160;testing,&#160;monitoring,&#160;and&#160;CI&#160;process&#160;</p>
+<p style="position:absolute;top:275px;left:108px;white-space:nowrap" class="ft43">&#160;<br/>Most&#160;applications&#160;are&#160;an&#160;implementation&#160;of&#160;the&#160;following&#160;design&#160;(From&#160;USPS&#160;Reference&#160;<br/>Architecture):&#160;<br/>&#160;</p>
+<p style="position:absolute;top:1065px;left:826px;white-space:nowrap" class="ft40">&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft50{font-size:14px;font-family:Times;color:#000000;}
+	.ft51{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft52{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft53{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft54{font-size:14px;line-height:15px;font-family:Times;color:#000000;}
+	.ft55{font-size:14px;line-height:22px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page5-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target005.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft50">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft51">4&#160;</p>
+<p style="position:absolute;top:875px;left:851px;white-space:nowrap" class="ft50">&#160;</p>
+<p style="position:absolute;top:891px;left:108px;white-space:nowrap" class="ft53">&#160;<br/>&#160;<br/>This&#160;architecture&#160;provides&#160;for&#160;an&#160;easy&#160;to&#160;execute,&#160;easy&#160;to&#160;scale&#160;implementation&#160;but&#160;is&#160;limiting&#160;in&#160;<br/>many&#160;ways.&#160;&#160;Generally&#160;this&#160;pattern&#160;requires&#160;an&#160;application&#160;to&#160;be&#160;designed&#160;as&#160;a&#160;“silo”,&#160;the&#160;<br/>application&#160;team&#160;designs&#160;and&#160;develops&#160;the&#160;entire&#160;stack;&#160;the&#160;views/pages,&#160;the&#160;application&#160;<br/>code/integration&#160;layer,&#160;and&#160;the&#160;database&#160;design.&#160;&#160;Many&#160;application&#160;teams&#160;will&#160;use&#160;frameworks&#160;<br/>which&#160;assist&#160;in&#160;some&#160;ways&#160;but&#160;limit&#160;options&#160;in&#160;many&#160;others.&#160;&#160;An&#160;application&#160;team&#160;that&#160;chooses&#160;<br/>the&#160;struts/tiles&#160;framework&#160;is&#160;generally&#160;not&#160;able&#160;to&#160;work&#160;with&#160;a&#160;separate&#160;UI/UX&#160;team&#160;as&#160;the&#160;<br/>framework&#160;is&#160;intended&#160;to&#160;work&#160;with&#160;specific&#160;view&#160;technology&#160;that&#160;is&#160;not&#160;used&#160;by&#160;UI/UX&#160;design&#160;<br/>resources.&#160;&#160;Many&#160;struts/tiles&#160;applications&#160;use&#160;server-side&#160;HTML&#160;generation&#160;via&#160;JSP&#160;use.&#160;&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft60{font-size:14px;font-family:Times;color:#000000;}
+	.ft61{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft62{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft63{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft64{font-size:14px;line-height:16px;font-family:Times;color:#000000;}
+	.ft65{font-size:14px;line-height:22px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page6-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target006.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft60">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft61">5&#160;</p>
+<p style="position:absolute;top:112px;left:108px;white-space:nowrap" class="ft62">Design/front&#160;end&#160;development&#160;teams&#160;will&#160;not&#160;work&#160;with&#160;JSP&#160;technology&#160;as&#160;it&#160;is&#160;not&#160;appropriate&#160;<br/>to&#160;do&#160;so.&#160;&#160;JSP,&#160;at&#160;its&#160;core,&#160;is&#160;a&#160;java&#160;servlet&#160;and&#160;requires&#160;a&#160;java&#160;environment&#160;to&#160;execute&#160;while&#160;<br/>front-end&#160;design&#160;teams&#160;are&#160;required&#160;to&#160;build&#160;designs&#160;for&#160;browsers&#160;using&#160;HTML/CSS/and&#160;<br/>javascript.&#160;&#160;These&#160;are&#160;fundamentally&#160;different&#160;approaches&#160;and&#160;the&#160;process&#160;of&#160;accepting&#160;a&#160;<br/>“wireframe”&#160;deliverable&#160;from&#160;a&#160;design&#160;firm&#160;and&#160;integrating&#160;it&#160;into&#160;a&#160;struts/tiles&#160;based&#160;application&#160;<br/>vs&#160;including&#160;a&#160;design&#160;team&#160;as&#160;a&#160;part&#160;of&#160;the&#160;application&#160;team&#160;in&#160;order&#160;to&#160;use&#160;a&#160;true&#160;Continuous&#160;<br/>Integration&#160;process.&#160;&#160;A&#160;struts/tiles&#160;based&#160;application&#160;necessarily&#160;requires&#160;one&#160;deliverable&#160;to&#160;be&#160;<br/>complete&#160;BEFORE&#160;the&#160;other&#160;can&#160;begin;&#160;the&#160;wireframes&#160;must&#160;be&#160;complete&#160;before&#160;the&#160;application&#160;<br/>code&#160;can&#160;be&#160;written&#160;or&#160;the&#160;application&#160;code&#160;must&#160;be&#160;written&#160;or&#160;complete&#160;for&#160;the&#160;design&#160;team&#160;to&#160;<br/>write&#160;the&#160;UI/UX&#160;code&#160;based&#160;on&#160;the&#160;application&#160;code.&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:321px;left:162px;white-space:nowrap" class="ft60">The&#160;solution&#160;for&#160;many&#160;of&#160;these&#160;problems&#160;are&#160;ALSO&#160;described&#160;in&#160;the&#160;USPS&#160;Reference&#160;</p>
+<p style="position:absolute;top:340px;left:108px;white-space:nowrap" class="ft60">Architecture,&#160;this&#160;design:&#160;</p>
+<p style="position:absolute;top:358px;left:459px;white-space:nowrap" class="ft60">&#160;</p>
+<p style="position:absolute;top:915px;left:788px;white-space:nowrap" class="ft60">&#160;</p>
+<p style="position:absolute;top:931px;left:108px;white-space:nowrap" class="ft62">The&#160;way&#160;to&#160;read&#160;the&#160;solutions&#160;in&#160;this&#160;provided&#160;architecture&#160;is&#160;to&#160;view&#160;the&#160;server-side&#160;generated&#160;<br/>content&#160;as&#160;a&#160;“service”&#160;to&#160;the&#160;browser&#160;based&#160;content,&#160;which&#160;can&#160;then&#160;be&#160;built&#160;using&#160;a&#160;responsive,&#160;<br/>rich&#160;client&#160;experience.&#160;&#160;The&#160;“API’s”&#160;that&#160;the&#160;“client&#160;tier”&#160;in&#160;the&#160;above&#160;design&#160;calls&#160;is&#160;the&#160;<br/>application&#160;server-side&#160;code&#160;and&#160;both&#160;teams&#160;can&#160;build&#160;their&#160;components&#160;of&#160;the&#160;system&#160;based&#160;on&#160;<br/>that&#160;spec&#160;at&#160;the&#160;same&#160;time&#160;thus&#160;delivering&#160;presentable&#160;solutions&#160;much&#160;faster.&#160;&#160;From&#160;that&#160;point&#160;<br/>optimization/CI/DevOps&#160;approaches&#160;reducing&#160;the&#160;complexity&#160;of&#160;both&#160;parts,&#160;the&#160;browser/client&#160;<br/>tier,&#160;and&#160;the&#160;server-side&#160;application&#160;code&#160;design.&#160;&#160;&#160;<br/>&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft70{font-size:14px;font-family:Times;color:#000000;}
+	.ft71{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft72{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft73{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft74{font-size:14px;line-height:16px;font-family:Times;color:#000000;}
+	.ft75{font-size:14px;line-height:22px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page7-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target007.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft70">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft71">6&#160;</p>
+<p style="position:absolute;top:112px;left:108px;white-space:nowrap" class="ft70">&#160;</p>
+<p style="position:absolute;top:112px;left:162px;white-space:nowrap" class="ft70">Microservices&#160;are&#160;an&#160;extension&#160;of&#160;this&#160;approach&#160;as&#160;the&#160;application&#160;the&#160;end&#160;user&#160;sees&#160;is&#160;</p>
+<p style="position:absolute;top:131px;left:108px;white-space:nowrap" class="ft73">the&#160;browser&#160;web&#160;page&#160;but&#160;that&#160;webpage&#160;can&#160;be&#160;composed&#160;of&#160;different&#160;services&#160;from&#160;different&#160;<br/>applications.&#160;&#160;A&#160;simple&#160;USPS&#160;example&#160;would&#160;be&#160;Click-N-Ship&#160;(CNS).&#160;&#160;&#160;<br/>&#160;</p>
+<p style="position:absolute;top:824px;left:887px;white-space:nowrap" class="ft70">&#160;</p>
+<p style="position:absolute;top:839px;left:108px;white-space:nowrap" class="ft72">&#160;<br/>In&#160;this&#160;application&#160;the&#160;familiar&#160;CNS&#160;content&#160;underneath&#160;the&#160;dialog&#160;box&#160;is&#160;loaded&#160;from&#160;the&#160;<br/>cns.usps.com&#160;website&#160;but&#160;a&#160;developer&#160;familiar&#160;with&#160;the&#160;browser&#160;debug&#160;tools&#160;could&#160;investigate&#160;<br/>and&#160;find&#160;that&#160;the&#160;AddressBook&#160;content&#160;comes&#160;from&#160;gab.usps.com.&#160;&#160;By&#160;expanding&#160;this&#160;approach&#160;<br/>USPS&#160;applications&#160;could&#160;be&#160;developed&#160;as&#160;mashups&#160;of&#160;UI/UX&#160;content&#160;developed&#160;and&#160;maintained&#160;<br/>separately&#160;from&#160;the&#160;server-side&#160;code&#160;that&#160;provides&#160;the&#160;data.&#160;&#160;This&#160;approach&#160;could&#160;also&#160;free&#160;<br/>application&#160;teams&#160;unfamiliar&#160;with&#160;UI/UX&#160;development&#160;from&#160;developing&#160;inferior&#160;websites&#160;that&#160;<br/>don’t&#160;meet&#160;USPS&#160;standards&#160;as&#160;the&#160;browser&#160;content&#160;could&#160;and&#160;should&#160;be&#160;developed&#160;by&#160;<br/>developers&#160;with&#160;the&#160;appropriate&#160;expertise.&#160;&#160;&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:1029px;left:162px;white-space:nowrap" class="ft70">&#160;</p>
+<p style="position:absolute;top:1048px;left:108px;white-space:nowrap" class="ft70">&#160;</p>
+<p style="position:absolute;top:1048px;left:324px;white-space:nowrap" class="ft70">&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft80{font-size:14px;font-family:Times;color:#000000;}
+	.ft81{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft82{font-size:22px;font-family:Times;color:#2d74b5;}
+	.ft83{font-size:17px;font-family:Times;color:#2d74b5;}
+	.ft84{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft85{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft86{font-size:17px;line-height:25px;font-family:Times;color:#2d74b5;}
+	.ft87{font-size:14px;line-height:15px;font-family:Times;color:#000000;}
+	.ft88{font-size:14px;line-height:22px;font-family:Times;color:#000000;}
+	.ft89{font-size:14px;line-height:16px;font-family:Times;color:#000000;}
+	.ft810{font-size:14px;line-height:21px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page8-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target008.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft80">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft81">7&#160;</p>
+<p style="position:absolute;top:113px;left:108px;white-space:nowrap" class="ft82">Technical&#160;Details&#160;</p>
+<p style="position:absolute;top:109px;left:298px;white-space:nowrap" class="ft82">–&#160;UI/UX&#160;</p>
+<p style="position:absolute;top:139px;left:108px;white-space:nowrap" class="ft85">&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:177px;left:162px;white-space:nowrap" class="ft80">The&#160;overview&#160;described&#160;application&#160;designs&#160;that&#160;can&#160;take&#160;advantage&#160;of&#160;newer&#160;</p>
+<p style="position:absolute;top:196px;left:108px;white-space:nowrap" class="ft85">application&#160;design&#160;techniques,&#160;I&#160;would&#160;like&#160;to&#160;now&#160;describe&#160;some&#160;of&#160;the&#160;details&#160;of&#160;the&#160;UI/UX&#160;side&#160;<br/>of&#160;the&#160;application.&#160;<br/>&#160;</p>
+<p style="position:absolute;top:257px;left:108px;white-space:nowrap" class="ft86">&#160;<br/>Infrastructure&#160;</p>
+<p style="position:absolute;top:304px;left:108px;white-space:nowrap" class="ft84">&#160;<br/>&#160;</p>
+<p style="position:absolute;top:323px;left:162px;white-space:nowrap" class="ft80">UI/UX&#160;content&#160;and&#160;the&#160;design&#160;firms&#160;that&#160;build&#160;it&#160;professionally&#160;work&#160;with&#160;static&#160;content&#160;</p>
+<p style="position:absolute;top:342px;left:108px;white-space:nowrap" class="ft88">types.&#160;&#160;Generally&#160;this&#160;means&#160;HTML/CSS/JS&#160;but&#160;could&#160;be&#160;expanded&#160;to&#160;include&#160;anything&#160;that&#160;is&#160;a&#160;<br/>“static”&#160;resource.&#160;&#160;That&#160;is&#160;a&#160;resource&#160;that&#160;is&#160;sent&#160;unchanged&#160;by&#160;the&#160;server&#160;that&#160;serves&#160;that&#160;<br/>resource.&#160;&#160;It&#160;could&#160;mean&#160;video&#160;and&#160;other&#160;media,&#160;</p>
+<p style="position:absolute;top:377px;left:463px;white-space:nowrap" class="ft80">flash&#160;files,&#160;office&#160;documents,&#160;PDF’s,&#160;SVG&#160;</p>
+<p style="position:absolute;top:399px;left:108px;white-space:nowrap" class="ft84">content,&#160;and&#160;more.&#160;&#160;USPS&#160;currently&#160;operates&#160;multiple&#160;products&#160;for&#160;service&#160;static&#160;content&#160;to&#160;end&#160;<br/>users:&#160;<br/>&#160;</p>
+<p style="position:absolute;top:452px;left:135px;white-space:nowrap" class="ft80">•&#160;&#160;Apache/IBM&#160;IHS/Microsoft&#160;IIS&#160;webservers&#160;–&#160;These&#160;webservers&#160;are&#160;the&#160;main&#160;product&#160;by&#160;</p>
+<p style="position:absolute;top:476px;left:162px;white-space:nowrap" class="ft85">which&#160;USPS&#160;developed/operated&#160;applications&#160;serve&#160;static&#160;content&#160;to&#160;end&#160;users&#160;and&#160;are&#160;<br/>a&#160;component&#160;of&#160;the&#160;reference&#160;architecture.&#160;</p>
+<p style="position:absolute;top:510px;left:135px;white-space:nowrap" class="ft80">•&#160;&#160;Teamsite&#160;–&#160;This&#160;is&#160;a&#160;product&#160;used&#160;for&#160;static&#160;content&#160;for&#160;blue.usps.gov,&#160;liteblue.usps.gov,&#160;</p>
+<p style="position:absolute;top:534px;left:162px;white-space:nowrap" class="ft80">about.usps.com,&#160;and&#160;usps.com&#160;websites&#160;and&#160;probably&#160;more.&#160;</p>
+<p style="position:absolute;top:549px;left:135px;white-space:nowrap" class="ft80">•&#160;&#160;Akamai&#160;CDN&#160;–&#160;A&#160;more&#160;recent&#160;addition&#160;to&#160;USPS&#160;static&#160;content&#160;infrastructure.&#160;&#160;Akamai&#160;</p>
+<p style="position:absolute;top:573px;left:162px;white-space:nowrap" class="ft80">provides&#160;many&#160;functions&#160;beyond&#160;content&#160;hosting.&#160;&#160;&#160;</p>
+<p style="position:absolute;top:592px;left:108px;white-space:nowrap" class="ft80">&#160;</p>
+<p style="position:absolute;top:611px;left:162px;white-space:nowrap" class="ft80">Browsers&#160;have&#160;been&#160;made&#160;much&#160;more&#160;functional,&#160;standards&#160;compliant,&#160;faster,&#160;and&#160;</p>
+<p style="position:absolute;top:630px;left:135px;white-space:nowrap" class="ft84">secure&#160;and&#160;are&#160;a&#160;very&#160;important,&#160;if&#160;not&#160;the&#160;most&#160;important,&#160;part&#160;of&#160;an&#160;enterprise&#160;application.&#160;&#160;<br/>Standards&#160;compliance,&#160;functionality,&#160;and&#160;security&#160;has&#160;improved&#160;to&#160;a&#160;point&#160;where&#160;javascript&#160;<br/>and&#160;other&#160;browser&#160;technologies&#160;are&#160;first&#160;class&#160;languages&#160;treated&#160;the&#160;same&#160;way&#160;as&#160;java,&#160;c#,&#160;<br/>and&#160;c++.&#160;&#160;That&#160;also&#160;means&#160;that&#160;the&#160;UI/UX&#160;components&#160;should&#160;be&#160;worked&#160;by&#160;experts&#160;and&#160;not&#160;<br/>just&#160;any&#160;group.&#160;&#160;&#160;</p>
+<p style="position:absolute;top:725px;left:162px;white-space:nowrap" class="ft84">&#160;<br/>The&#160;complexity&#160;in&#160;website&#160;design&#160;has&#160;encouraged&#160;the&#160;development&#160;of&#160;many&#160;frameworks&#160;</p>
+<p style="position:absolute;top:763px;left:135px;white-space:nowrap" class="ft85">and&#160;resources&#160;to&#160;assist&#160;engineers&#160;in&#160;much&#160;the&#160;same&#160;way&#160;that&#160;frameworks&#160;were&#160;created&#160;for&#160;<br/>J2EE&#160;applications.&#160;&#160;This&#160;is&#160;another&#160;reason&#160;to&#160;separate&#160;the&#160;server-side&#160;application&#160;code&#160;team&#160;<br/>from&#160;the&#160;UI/UX&#160;development&#160;team&#160;as&#160;there&#160;is&#160;no&#160;enterprise&#160;wide&#160;standard&#160;“platform”&#160;for&#160;<br/>UI/UX&#160;code&#160;as&#160;there&#160;is&#160;for&#160;J2EE&#160;applications.&#160;&#160;The&#160;platform&#160;is&#160;the&#160;browser&#160;and&#160;having&#160;<br/>multiple&#160;teams&#160;creating&#160;individual&#160;environments&#160;does&#160;not&#160;create&#160;opportunities&#160;for&#160;reuse&#160;and&#160;<br/>often&#160;creates&#160;the&#160;problem&#160;of&#160;websites&#160;of&#160;widely&#160;varying&#160;quality&#160;which&#160;in&#160;turn&#160;creates&#160;a&#160;bad&#160;<br/>experience&#160;for&#160;the&#160;most&#160;important&#160;people&#160;to&#160;the&#160;enterprise,&#160;the&#160;customer.&#160;&#160;&#160;</p>
+<p style="position:absolute;top:896px;left:162px;white-space:nowrap" class="ft85">&#160;<br/>The&#160;choice&#160;of&#160;UI/UX&#160;framework&#160;/&#160;architecture&#160;is&#160;not&#160;as&#160;important&#160;at&#160;the&#160;moment&#160;as&#160;the&#160;</p>
+<p style="position:absolute;top:934px;left:135px;white-space:nowrap" class="ft84">design&#160;of&#160;enterprise&#160;applications.&#160;&#160;&#160;A&#160;proper&#160;enterprise&#160;content&#160;management&#160;setup&#160;will&#160;allow&#160;<br/>for&#160;rapid&#160;enhancement&#160;and&#160;change&#160;based&#160;on&#160;the&#160;customer’s&#160;environment&#160;(browser&#160;<br/>technology).&#160;&#160;A&#160;UI/UX&#160;team&#160;should&#160;have&#160;the&#160;responsibility&#160;of&#160;creating&#160;and&#160;managing&#160;ALL&#160;<br/>content&#160;across&#160;ALL&#160;applications.&#160;&#160;</p>
+<p style="position:absolute;top:1010px;left:162px;white-space:nowrap" class="ft84">&#160;<br/>&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft90{font-size:14px;font-family:Times;color:#000000;}
+	.ft91{font-size:16px;font-family:Times;color:#ffffff;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page9-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target009.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft90">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft91">8&#160;</p>
+<p style="position:absolute;top:1138px;left:1029px;white-space:nowrap" class="ft90">&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft100{font-size:14px;font-family:Times;color:#000000;}
+	.ft101{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft102{font-size:14px;line-height:21px;font-family:Times;color:#000000;}
+	.ft103{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft104{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page10-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target010.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft100">&#160;</p>
+<p style="position:absolute;top:46px;left:59px;white-space:nowrap" class="ft101">9&#160;</p>
+<p style="position:absolute;top:112px;left:16px;white-space:nowrap" class="ft100">&#160;</p>
+<p style="position:absolute;top:131px;left:108px;white-space:nowrap" class="ft100">&#160;</p>
+<p style="position:absolute;top:131px;left:162px;white-space:nowrap" class="ft100">A&#160;permanent&#160;UI/UX&#160;group&#160;should&#160;be&#160;created&#160;and&#160;this&#160;group&#160;responsible&#160;for&#160;all&#160;</p>
+<p style="position:absolute;top:147px;left:108px;white-space:nowrap" class="ft104">development&#160;and&#160;maintenance&#160;of&#160;the&#160;USPS&#160;“website”.&#160;&#160;View&#160;the&#160;entirety&#160;of&#160;the&#160;USPS&#160;presence&#160;<br/>as&#160;1&#160;application.&#160;&#160;This&#160;will&#160;create&#160;the&#160;environment&#160;and&#160;focus&#160;that&#160;is&#160;needed&#160;to&#160;reduce&#160;<br/>duplication,&#160;increase&#160;standards&#160;compliance,&#160;and&#160;speed&#160;changes.&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:226px;left:162px;white-space:nowrap" class="ft100">I&#160;would&#160;strongly&#160;recommend&#160;a&#160;Content&#160;Management&#160;System&#160;(CMS)&#160;be&#160;used&#160;as&#160;this&#160;will&#160;</p>
+<p style="position:absolute;top:245px;left:108px;white-space:nowrap" class="ft104">allow&#160;for&#160;permission&#160;management&#160;and&#160;coordination&#160;between&#160;the&#160;groups&#160;since&#160;everything&#160;should&#160;<br/>be&#160;run&#160;through&#160;the&#160;CMS.&#160;&#160;USPS&#160;does&#160;NOT currently&#160;have&#160;an&#160;enterprise&#160;Content-Management-<br/>System&#160;so&#160;options&#160;would&#160;be&#160;worth&#160;reviewing.&#160;&#160;Cloud-based&#160;products&#160;should&#160;be&#160;given&#160;strongest&#160;<br/>priority&#160;as&#160;the&#160;infrastructure&#160;described&#160;above&#160;allows&#160;for&#160;static&#160;content&#160;to&#160;be&#160;flexibly&#160;worked&#160;from&#160;<br/>anywhere.&#160;&#160;The&#160;data&#160;from&#160;the&#160;microservices&#160;is&#160;the&#160;only&#160;secure&#160;piece&#160;of&#160;the&#160;enterprise&#160;and&#160;the&#160;<br/>microservices&#160;themselves&#160;should&#160;be&#160;the&#160;only&#160;thing&#160;hosted&#160;on&#160;private&#160;infrastructure.&#160;&#160;&#160;<br/>&#160;</p>
+<p style="position:absolute;top:358px;left:324px;white-space:nowrap" class="ft100">&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft110{font-size:14px;font-family:Times;color:#000000;}
+	.ft111{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft112{font-size:22px;font-family:Times;color:#2d74b5;}
+	.ft113{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft114{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft115{font-size:14px;line-height:15px;font-family:Times;color:#000000;}
+	.ft116{font-size:14px;line-height:22px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page11-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target011.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft110">&#160;</p>
+<p style="position:absolute;top:46px;left:49px;white-space:nowrap" class="ft111">10&#160;</p>
+<p style="position:absolute;top:113px;left:108px;white-space:nowrap" class="ft112">Technical&#160;Details&#160;</p>
+<p style="position:absolute;top:109px;left:298px;white-space:nowrap" class="ft112">–&#160;Server-Side&#160;Application&#160;&#160;</p>
+<p style="position:absolute;top:139px;left:108px;white-space:nowrap" class="ft114">&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:177px;left:162px;white-space:nowrap" class="ft110">Service&#160;Oriented&#160;Architecture&#160;has&#160;been&#160;around&#160;for&#160;a&#160;while&#160;and&#160;microservices&#160;are&#160;the&#160;</p>
+<p style="position:absolute;top:196px;left:108px;white-space:nowrap" class="ft114">natural&#160;evolution&#160;of&#160;enterprise&#160;services.&#160;&#160;By&#160;treating&#160;the&#160;browser&#160;as&#160;a&#160;first&#160;class&#160;component&#160;of&#160;<br/>an&#160;enterprise&#160;application&#160;architecture&#160;it&#160;becomes&#160;apparent&#160;that&#160;server-side&#160;code&#160;should&#160;be&#160;the&#160;<br/>“services”&#160;that&#160;the&#160;browser&#160;client&#160;uses.&#160;&#160;These&#160;are&#160;basic&#160;microservices.&#160;&#160;&#160;<br/>&#160;<br/>For&#160;example,&#160;Click-N-</p>
+<p style="position:absolute;top:269px;left:268px;white-space:nowrap" class="ft110">Ship(CNS)&#160;has&#160;a&#160;“FetchServicesAction”&#160;that&#160;the&#160;users&#160;browser&#160;calls&#160;when&#160;</p>
+<p style="position:absolute;top:291px;left:108px;white-space:nowrap" class="ft113">the&#160;user&#160;wants&#160;to&#160;get&#160;rates&#160;and&#160;products&#160;for&#160;their&#160;desired&#160;label.&#160;<br/>&#160;</p>
+<p style="position:absolute;top:955px;left:894px;white-space:nowrap" class="ft110">&#160;</p>
+<p style="position:absolute;top:971px;left:108px;white-space:nowrap" class="ft113">&#160;<br/>This&#160;call&#160;was&#160;made&#160;by&#160;the&#160;browser&#160;to&#160;a&#160;microservice&#160;hosted&#160;on&#160;the&#160;CNS&#160;infrastructure.&#160;&#160;The&#160;<br/>microservice&#160;returns&#160;all&#160;of&#160;the&#160;information&#160;needed&#160;by&#160;the&#160;page&#160;(labelInformation.shtml)&#160;to&#160;render&#160;<br/>the&#160;response&#160;to&#160;the&#160;user.&#160;&#160;This&#160;microservice&#160;could&#160;be&#160;called&#160;by&#160;ANY&#160;application&#160;or&#160;ANY&#160;page.&#160;&#160;If&#160;<br/>a&#160;change&#160;was&#160;desired&#160;to&#160;this&#160;page&#160;and&#160;a&#160;robust&#160;CMS&#160;system&#160;was&#160;in&#160;place,&#160;this&#160;change&#160;can&#160;be&#160;</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft120{font-size:14px;font-family:Times;color:#000000;}
+	.ft121{font-size:16px;font-family:Times;color:#ffffff;}
+	.ft122{font-size:22px;font-family:Times;color:#2d74b5;}
+	.ft123{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+	.ft124{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft125{font-size:14px;line-height:20px;font-family:Times;color:#000000;}
+	.ft126{font-size:14px;line-height:15px;font-family:Times;color:#000000;}
+	.ft127{font-size:14px;line-height:22px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page12-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="target012.png" alt="background image"/>
+<p style="position:absolute;top:58px;left:108px;white-space:nowrap" class="ft120">&#160;</p>
+<p style="position:absolute;top:46px;left:49px;white-space:nowrap" class="ft121">11&#160;</p>
+<p style="position:absolute;top:112px;left:108px;white-space:nowrap" class="ft124">made&#160;by&#160;the&#160;UI/UX&#160;team&#160;without&#160;any&#160;interaction&#160;with&#160;the&#160;CNS&#160;team&#160;at&#160;all.&#160;&#160;Only&#160;if&#160;the&#160;<br/>microservice&#160;API&#160;needs&#160;to&#160;change&#160;does&#160;the&#160;CNS&#160;team&#160;need&#160;to&#160;be&#160;involved&#160;and&#160;depending&#160;on&#160;<br/>the&#160;change&#160;the&#160;UI/UX&#160;team&#160;may&#160;not&#160;need&#160;to&#160;be&#160;involved.&#160;&#160;&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:188px;left:162px;white-space:nowrap" class="ft120">Microservices&#160;should&#160;return&#160;JSON&#160;for&#160;their&#160;format.&#160;&#160;JSON&#160;is&#160;smaller&#160;over&#160;the&#160;wire&#160;than&#160;</p>
+<p style="position:absolute;top:207px;left:108px;white-space:nowrap" class="ft124">XML,&#160;more&#160;efficient,&#160;easier&#160;to&#160;use&#160;and&#160;understand,&#160;more&#160;flexible,&#160;and&#160;can&#160;be&#160;read&#160;by&#160;both&#160;<br/>servers&#160;and&#160;browsers&#160;natively.&#160;&#160;If&#160;JSON&#160;cannot&#160;be&#160;used&#160;for&#160;some&#160;reason&#160;XML&#160;is&#160;acceptable&#160;as&#160;<br/>it&#160;can&#160;also&#160;be&#160;used&#160;by&#160;both&#160;browser&#160;and&#160;server-to-server&#160;communication.&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:283px;left:162px;white-space:nowrap" class="ft120">Microservices&#160;do&#160;NOT need&#160;struts&#160;or&#160;spring&#160;and&#160;it&#160;would&#160;be&#160;strongly&#160;advised&#160;to&#160;not&#160;use&#160;</p>
+<p style="position:absolute;top:302px;left:108px;white-space:nowrap" class="ft124">either&#160;of&#160;them.&#160;&#160;Modern&#160;application&#160;servers,&#160;even&#160;free-open&#160;source&#160;ones,&#160;contain&#160;enough&#160;<br/>infrastructure&#160;to&#160;make&#160;these&#160;libraries&#160;unnecessary.&#160;&#160;These&#160;frameworks&#160;overly&#160;complicate&#160;<br/>application&#160;code&#160;and&#160;increase&#160;the&#160;ramp&#160;up&#160;time&#160;of&#160;new&#160;developers&#160;to&#160;join&#160;a&#160;team&#160;and&#160;begin&#160;<br/>productive&#160;work.&#160;&#160;&#160;These&#160;services&#160;should&#160;be&#160;written&#160;as&#160;thinly&#160;as&#160;possible&#160;to&#160;allow&#160;for&#160;simple&#160;<br/>migration&#160;and&#160;deployment&#160;via&#160;DevOps/CI&#160;operations.&#160;&#160;&#160;</p>
+<p style="position:absolute;top:416px;left:108px;white-space:nowrap" class="ft122">Microservice&#160;Rules&#160;and&#160;Recommendations&#160;</p>
+<p style="position:absolute;top:461px;left:108px;white-space:nowrap" class="ft122">&#160;</p>
+<p style="position:absolute;top:488px;left:108px;white-space:nowrap" class="ft124">Microservices&#160;should&#160;be&#160;developed&#160;carefully&#160;to&#160;provide&#160;maximum&#160;benefit&#160;at&#160;a&#160;low&#160;cost.&#160;&#160;The&#160;<br/>following&#160;are&#160;principals&#160;used&#160;to&#160;that&#160;effect:&#160;<br/>&#160;</p>
+<p style="position:absolute;top:541px;left:162px;white-space:nowrap" class="ft125">•&#160;&#160;Use&#160;jax-rs&#160;framework&#160;or&#160;.net&#160;equivalent&#160;(for&#160;.net&#160;applications)&#160;<br/>•&#160;&#160;Do&#160;not&#160;use&#160;session&#160;or&#160;any&#160;other&#160;server&#160;state&#160;mechanism&#160;<br/>•&#160;&#160;Output&#160;should&#160;be&#160;JSON&#160;or&#160;XML.&#160;&#160;&#160;</p>
+<p style="position:absolute;top:601px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;Cross-domain&#160;services&#160;should&#160;enable&#160;and&#160;configure&#160;CORS&#160;but&#160;if&#160;careful&#160;analysis&#160;is&#160;</p>
+<p style="position:absolute;top:625px;left:189px;white-space:nowrap" class="ft127">performed&#160;JSONP&#160;is&#160;acceptable&#160;in&#160;cases&#160;where&#160;no&#160;private&#160;data&#160;is&#160;contained.&#160;&#160;In&#160;a&#160;<br/>previous&#160;example&#160;“FetchServiceAction”&#160;contains&#160;private&#160;data&#160;and&#160;should&#160;not&#160;return&#160;<br/>JSONP.&#160;&#160;CNS&#160;should&#160;enable&#160;CORS&#160;for&#160;cross-domain&#160;requests&#160;</p>
+<p style="position:absolute;top:679px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;Microservices&#160;cannot&#160;contain&#160;or&#160;return&#160;UI&#160;content&#160;of&#160;any&#160;kind.&#160;</p>
+<p style="position:absolute;top:698px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;Should&#160;be&#160;designed&#160;to&#160;be&#160;as&#160;platform&#160;independent&#160;as&#160;possible.&#160;&#160;Use&#160;configuration&#160;if&#160;</p>
+<p style="position:absolute;top:722px;left:189px;white-space:nowrap" class="ft123">needed.&#160;&#160;Do&#160;not&#160;use&#160;the&#160;filesystem&#160;or&#160;OS&#160;unless&#160;that&#160;is&#160;a&#160;specific&#160;function&#160;of&#160;the&#160;<br/>microservice.&#160;</p>
+<p style="position:absolute;top:757px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;Document&#160;microservice&#160;API’s&#160;as&#160;a&#160;regular&#160;API.&#160;</p>
+<p style="position:absolute;top:776px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;Always&#160;deploy&#160;through&#160;scripting&#160;and&#160;automation&#160;infrastructure.&#160;&#160;This&#160;is&#160;VERY&#160;</p>
+<p style="position:absolute;top:800px;left:189px;white-space:nowrap" class="ft124">important&#160;to&#160;build&#160;and&#160;maintain&#160;flexibility&#160;within&#160;the&#160;organization.&#160;&#160;White&#160;glove&#160;<br/>deployments&#160;are&#160;not&#160;scriptable&#160;and&#160;degrade&#160;the&#160;environment&#160;for&#160;everyone.&#160;</p>
+<p style="position:absolute;top:835px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;The&#160;microservice&#160;team&#160;members&#160;should&#160;not&#160;be&#160;on&#160;the&#160;UI&#160;team&#160;for&#160;the&#160;app&#160;they&#160;are&#160;</p>
+<p style="position:absolute;top:858px;left:189px;white-space:nowrap" class="ft123">working&#160;on.&#160;&#160;This&#160;creates&#160;laziness&#160;in&#160;the&#160;code&#160;as&#160;developers&#160;can&#160;write&#160;the&#160;<br/>microservice&#160;and&#160;the&#160;UI&#160;that&#160;interacts&#160;with&#160;it&#160;and&#160;cut&#160;corners.&#160;</p>
+<p style="position:absolute;top:893px;left:162px;white-space:nowrap" class="ft120">•&#160;&#160;Always&#160;rotate&#160;teams.&#160;&#160;Microservice&#160;code&#160;should&#160;be&#160;small&#160;and&#160;focused&#160;on&#160;a&#160;specific&#160;</p>
+<p style="position:absolute;top:916px;left:189px;white-space:nowrap" class="ft123">task.&#160;&#160;Having&#160;a&#160;microservice&#160;so&#160;specialized&#160;that&#160;only&#160;1&#160;person&#160;is&#160;familiar&#160;with&#160;and&#160;<br/>comfortable&#160;working&#160;on&#160;has&#160;been&#160;designed&#160;wrong.&#160;&#160;Individual&#160;developers&#160;should&#160;be&#160;<br/>able&#160;to&#160;pick&#160;up&#160;a&#160;microservice&#160;comfort&#160;level&#160;within&#160;2&#160;weeks.&#160;&#160;Rotate&#160;developers&#160;every&#160;<br/>6&#160;</p>
+<p style="position:absolute;top:970px;left:203px;white-space:nowrap" class="ft120">–&#160;12&#160;months,&#160;or&#160;more&#160;or&#160;less&#160;often&#160;based&#160;on&#160;desires&#160;but&#160;rotation&#160;should&#160;always&#160;</p>
+<p style="position:absolute;top:992px;left:189px;white-space:nowrap" class="ft120">occur&#160;after&#160;a&#160;period&#160;of&#160;time.&#160;</p>
+</div>
+</body>
+</html>
